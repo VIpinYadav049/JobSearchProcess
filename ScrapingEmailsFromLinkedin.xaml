@@ -1,0 +1,322 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ScrapingEmailsFromLinkedin" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="1468.8000000000002,562.84" sap2010:WorkflowViewState.IdRef="Sequence_10">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence sap:VirtualizedContainerService.HintSize="449.6,358.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dt_ScrapedEmails" />
+        <Variable x:TypeArguments="x:String" Name="testdt" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:BuildDataTable DataTable="[dt_ScrapedEmails]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Email&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:BuildDataTable>
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="a81c5051-a93e-47c3-9169-1a1d96e6a22c" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,109.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NCheckState DisplayName="Check App State 'Vipin B'" sap:VirtualizedContainerService.HintSize="382.4,48" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="a81c5051-a93e-47c3-9169-1a1d96e6a22c" Timeout="10" Version="V3">
+                <uix:NCheckState.IfExists>
+                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,24.8" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Saved items'" sap:VirtualizedContainerService.HintSize="416,225.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a81c5051-a93e-47c3-9169-1a1d96e6a22c" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/feed/" CVScreenId="2d61a915-b3fa-41ad-a322-92ef18034c4f" CvTextArea="301, 779, 83, 15" CvTextArgument="Saved items" CvType="Text" DesignTimeRectangle="304, 777, 81, 20" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='ember28' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='ember28' tag='SPAN' type='' class='' aaname='                 Saved items               ' check:innerText='Saved items' /&gt;" Guid="9c3771da-c3e9-4d01-9d6e-f2f751a99dc2" InformativeScreenshot="7e5c9e49f64d575dcfa7075c47e30053.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Feed | LinkedIn' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="254, 757, 281, 140" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='4' parentid='ember25' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='artdeco-card overflow-hidden p4 mb2' parentid='ember25' tag='DIV' aaname='            ' check:innerText='Saved items&amp;#xD;&amp;#xA;&amp;#xD;&amp;#xA;Groups&amp;#xD;&amp;#xA;&amp;#xD;&amp;#xA;Events' /&gt;" Guid="b87b5307-35d0-4205-b174-7fd583b93b70" SearchSteps="FuzzySelector" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                    </uix:NClick>
+                    <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="416,122.4" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Saved posts and articles'" sap:VirtualizedContainerService.HintSize="416,225.6" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a81c5051-a93e-47c3-9169-1a1d96e6a22c" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/my-items/saved-jobs/" CVScreenId="47e2e976-45c3-4d42-8559-c2b41a1dea71" CvTextArea="267, 445, 192, 17" CvTextArgument="Saved posts and articles" CvType="Text" DesignTimeRectangle="269, 443, 212, 25" DesignTimeScaleFactor="1.25" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='ember357' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='ember357' tag='DIV' type='' class='workflow-navigation__item-name t-bold t-black--light truncate' aaname='               Saved posts and articles             ' check:innerText='Saved posts and articles' /&gt;" Guid="61d5d740-b27f-4705-b333-4b0a14bc8301" InformativeScreenshot="9825dd79277177209c68c03d960d0939.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='My Jobs | LinkedIn' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="47e2e976-45c3-4d42-8559-c2b41a1dea71" CvTextArea="297, 276, 85, 22" CvTextArgument="My items" CvType="Text" DesignTimeRectangle="254, 255, 278, 60" ElementType="Text" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;aside&amp;gt;section&amp;gt;h2' tag='H2' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='H2' class='display-flex align-items-center p3 t-16 t-bold t-black--light' aaname='                   My items       ' check:innerText='My items' /&gt;" Guid="b596e214-2102-467b-91e9-9a0c51d5a12b" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                      <uix:NClick.VerifyOptions>
+                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                          <uix:VerifyExecutionOptions.Retry>
+                            <InArgument x:TypeArguments="x:Boolean" />
+                          </uix:VerifyExecutionOptions.Retry>
+                          <uix:VerifyExecutionOptions.Timeout>
+                            <InArgument x:TypeArguments="x:Double" />
+                          </uix:VerifyExecutionOptions.Timeout>
+                        </uix:VerifyExecutionOptions>
+                      </uix:NClick.VerifyOptions>
+                    </uix:NClick>
+                    <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="416,122.4" sap2010:WorkflowViewState.IdRef="Delay_2" />
+                    <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='JobText'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='p' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="416,182.4" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="a81c5051-a93e-47c3-9169-1a1d96e6a22c" Version="V3">
+                      <uix:NExtractData.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/my-items/saved-posts/" DesignTimeRectangle="562, -2889, 675, 5520" DesignTimeScaleFactor="1.25" ElementType="List" FullSelectorArgument="&lt;webctrl aria-role='list' tag='UL' /&gt;" Guid="53fe9d02-6e9f-481f-bfac-e88846d1dbcc" InformativeScreenshot="1967b17eea143ed0d5d9ebca2750e490.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Saved Posts | LinkedIn' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
+                      </uix:NExtractData.Target>
+                    </uix:NExtractData>
+                  </Sequence>
+                </uix:NCheckState.IfExists>
+                <uix:NCheckState.IfNotExists>
+                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="449.6,24.8" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Throw Exception="[New Exception(&quot;Some issue in website loading&quot;)]" sap:VirtualizedContainerService.HintSize="416,49.6" sap2010:WorkflowViewState.IdRef="Throw_1">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Throw>
+                  </Sequence>
+                </uix:NCheckState.IfNotExists>
+                <uix:NCheckState.Target>
+                  <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/feed/" DesignTimeRectangle="254, 255, 281, 283" DesignTimeScaleFactor="1.25" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' parentid='ember25' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='ember25' tag='DIV' class='artdeco-card pb4 mb2 overflow-hidden' aaname='                                      ' check:innerText='Vipin B Yadav&amp;#xD;&amp;#xA;&amp;#xD;&amp;#xA;Serving Notice Period | Senior Software Engineer at Coforge | RPA Developer l UiPath' /&gt;" Guid="09617ea5-c11f-411e-a806-f5008db76cb3" InformativeScreenshot="a7c4b54093b8f114485aad28c86026b4.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Feed | LinkedIn' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive" />
+                </uix:NCheckState.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NCheckState>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="-9, -9, 1938, 1038" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAALiSURBVFhH7VfNaxNBFN/UGJMUvdSi0Kog1YvgwYtHwZPnFj0oCFbT5GCUVmwFxYKotQdvKqJ/QRUUNRTEotmVpk1bY1H8uNh8WGtpU6utkkQ3ec5vshO3aTcNslty6IMfmX3zPn4zbzLDkypCXB4ZqHJ7lFp3i1JvMWrcPsXm9ipacm9QcpzstblalCY2GWH4bDHCDE1r/M9sTl9QktgHUKNN0AoBC8VuFwhga8CuYOTyKLTuhMyBsX7OBCAXci5NAAm3tIXo0M13HNvODJhNwpgAEm1lCXvCU/Qrk2VQqWdoihEylYQxAWz5Qbbqn2mVhGAMHeZgYwIqmEC+/qIEKi8DSoCyrEgJACTCwcOqARzIcpKzu4TblWFbmgBgPy5T1bEgx1o2RnDoUQZ8C4iE0K/3vaRNp/qp1t9fsNXH1MGYAIIhyLn7Y3Q1EOfAGDoEPHD9DXUFEnTlSZw6H8Zo94Vh2nw6RIdvv6e7wQl6+naGAqNJusb89l56RdWLk5cm4GQEdnSEafxbWjuCxMfQ2ZuDPLGQ+ZRKFx9E6VFkmp8XveQYotMpOnrnA1V7LSLwW83R5I8M5ZDNQOLJFO3rek3OheUwh4AQNZujxEyaIrH5PCFNL+TW8y+0gZ0PxNdgHoHMnyzd6BunPZ0jVN86QPu7R2lobE6bzctIdK74JjWPQPDjLNW1hsjBthgJ8M84wg4k7g8h8WSaGtoHeWzk0HKZQ6C7N7Hg7+b0yLTr/DB9/Z7RLP75W0Lg8uMYXzV8hX9D+9L+K0bAyH+VwCqBsglsPzvIL4+J2TQHxtDZm2XquPeJ33YIil98O4oIGPmXRQDAswoHsAYwhg5PMl6+nZoev3glxVO9nL/OpjQBAGz1EHrcdnp9cXIBvQ1QNL+IAJoENAvFhlYBTRCaIUlCe2T397HWTG7UJsDOSrCFyo32thc2l0/O94dMAbDmVAYrbM3/om5ZeOSNaITREFeASNJf503cP1oKQCkAAAAASUVORK5CYII=" InformativeScreenshot="1fe861037fd8e28e3236c503a9f85db8.jpg" Selector="&lt;html app='chrome.exe' title='Feed | LinkedIn' /&gt;" Title="Saved Posts | LinkedIn" Url="https://www.linkedin.com/feed/" />
+        </uix:NApplicationCard.TargetApp>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </uix:NApplicationCard>
+      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[ExtractDataTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+        <ui:ForEachRow.Body>
+          <ActivityAction x:TypeArguments="sd:DataRow">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,363.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="TestEmail" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:Matches BuilderPattern="((?&gt;[a-zA-Z\d!#$%&amp;'*+\-\/=?^_`{|}~]+\x20*|&quot;((?=[\x01-\x7f])[^&quot;\\]|\\[\x01-\x7f])*&quot;\x20*)*(?&lt;angle&gt;&lt;))?((?!\.)(?&gt;\.?[a-zA-Z\d!#$%&amp;'*+\-\/=?^_`{|}~]+)+|&quot;((?=[\x01-\x7f])[^&quot;\\]|\\[\x01-\x7f])*&quot;)@(((?!-)[a-zA-Z\d\-]+(?&lt;!-)\.)+[a-zA-Z]{2,}|\[(((?(?&lt;!\[)\.)(25[0-5]|2[0-4]\d|[01]?\d?\d)){4}|[a-zA-Z\d\-]*[a-zA-Z\d]:((?=[\x01-\x7f])[^\\\[\]]|\\[\x01-\x7f])+)\])(?(angle)&gt;)" DisplayName="Find Matching Patterns" FirstMatch="[TestEmail]" sap:VirtualizedContainerService.HintSize="382.4,92" sap2010:WorkflowViewState.IdRef="Matches_1" Input="[CurrentRow(0).ToString]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;EMAIL&quot;,&quot;OperationName&quot;:&quot;Email&quot;,&quot;OperationValue&quot;:&quot;((?&gt;[a-zA-Z\\d!#$%&amp;'*+\\-\\\/=?^_`{|}~]+\\x20*|\&quot;((?=[\\x01-\\x7f])[^\&quot;\\\\]|\\\\[\\x01-\\x7f])*\&quot;\\x20*)*(?&lt;angle&gt;&lt;))?((?!\\.)(?&gt;\\.?[a-zA-Z\\d!#$%&amp;'*+\\-\\\/=?^_`{|}~]+)+|\&quot;((?=[\\x01-\\x7f])[^\&quot;\\\\]|\\\\[\\x01-\\x7f])*\&quot;)@(((?!-)[a-zA-Z\\d\\-]+(?&lt;!-)\\.)+[a-zA-Z]{2,}|\\[(((?(?&lt;!\\[)\\.)(25[0-5]|2[0-4]\\d|[01]?\\d?\\d)){4}|[a-zA-Z\\d\\-]*[a-zA-Z\\d]:((?=[\\x01-\\x7f])[^\\\\\\[\\]]|\\\\[\\x01-\\x7f])+)\\])(?(angle)&gt;)&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="((?&gt;[a-zA-Z\d!#$%&amp;'*+\-\/=?^_`{|}~]+\x20*|&quot;((?=[\x01-\x7f])[^&quot;\\]|\\[\x01-\x7f])*&quot;\x20*)*(?&lt;angle&gt;&lt;))?((?!\.)(?&gt;\.?[a-zA-Z\d!#$%&amp;'*+\-\/=?^_`{|}~]+)+|&quot;((?=[\x01-\x7f])[^&quot;\\]|\\[\x01-\x7f])*&quot;)@(((?!-)[a-zA-Z\d\-]+(?&lt;!-)\.)+[a-zA-Z]{2,}|\[(((?(?&lt;!\[)\.)(25[0-5]|2[0-4]\d|[01]?\d?\d)){4}|[a-zA-Z\d\-]*[a-zA-Z\d]:((?=[\x01-\x7f])[^\\\[\]]|\\[\x01-\x7f])+)\])(?(angle)&gt;)" RegexOption="IgnoreCase, Compiled" />
+              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{TestEmail}]" DataTable="[dt_ScrapedEmails]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="382.4,211.2" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+            </Sequence>
+          </ActivityAction>
+        </ui:ForEachRow.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:ForEachRow>
+      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_ScrapedEmails]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+        <ui:ForEachRow.Body>
+          <ActivityAction x:TypeArguments="sd:DataRow">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,245.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:FilterDataTable DataTable="[dt_ScrapedEmails]" DisplayName="Filter Data Table" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="382.4,185.6" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[dt_ScrapedEmails]" SelectColumnsMode="Remove">
+                <ui:FilterDataTable.Filters>
+                  <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                    <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EMPTY">
+                      <ui:FilterOperationArgument.Column>
+                        <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+                      </ui:FilterOperationArgument.Column>
+                    </ui:FilterOperationArgument>
+                  </scg:List>
+                </ui:FilterDataTable.Filters>
+                <ui:FilterDataTable.SelectColumns>
+                  <scg:List x:TypeArguments="InArgument" Capacity="4">
+                    <x:Null />
+                  </scg:List>
+                </ui:FilterDataTable.SelectColumns>
+              </ui:FilterDataTable>
+            </Sequence>
+          </ActivityAction>
+        </ui:ForEachRow.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:ForEachRow>
+      <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[dt_ScrapedEmails]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" WorkbookPath="HRList.xlsx">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:WriteRange>
+    </Sequence>
+  </Sequence>
+</Activity>
